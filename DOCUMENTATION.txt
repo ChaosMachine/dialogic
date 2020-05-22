@@ -1,10 +1,18 @@
+Syntax:
+$-create a new situation
+/-calling a command
+
+Hello World:
+$init <-- this is the entry point
+Hello World <-- You can write how many text you want
+
+Simple ai:
 $init
 Hi, what do you think of my beard?
 a.its fine,b.its bad
 /wait <--  wait for the user to write something
 /if a <-- check if the input = a.If so, jump to next line.Else ignore next line.
 /go happy
-
 /if b
 /go sad
 

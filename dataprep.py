@@ -31,5 +31,5 @@ def unspace(content):
 def prepare(content):
 	content = parse(content)
 	content = cleaN(content)
-	content = unspace(content)
+	#content = unspace(content)
 	return content

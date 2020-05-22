@@ -39,6 +39,7 @@ class Dialog:
 			if not self.running:
 				break
 if __name__ == "__main__":
-	file = input("Enter file:")
-	dg = Dialog(readFile(file))
-	dg.run()
+	while True:
+		file = input("Enter file:")
+		dg = Dialog(readFile(file))
+		dg.run()
