@@ -1,5 +1,6 @@
 import sys,os
 from dataprep import prepare,readFile
+from threading import Thread
 
 class Dialog:
 	def __init__(self,dialog):
@@ -12,21 +13,26 @@ class Dialog:
 		noread = 0
 		for line in text:
 				if line[0:5] == "/wait": # BROKEN.
-					return
+					self.act()
 				elif line[0:4] == "/go ":
+					print(14)
 					self.pos=line[4:]
 				elif line[0:4] == "/end":
-					running = False
+					self.running = False
+					return
 				else:
 					print(line)
-	def act(self,action):
-		self.action = str(action)
+	def act(self):
+		if self.running:
+			self.action = input()
 	def run(self):
 		while self.running:
 			self.draw()
-			self.act(input(">>>"))
-			print(self.action)
-
+			if not self.running:
+				break
+			self.act()
+			if not self.running:
+				break
 if __name__ == "__main__":
 	file = input("Enter file:")
 	dg = Dialog(readFile(file))

@@ -1,5 +1,6 @@
 $init
 Helo da
+/wait
 /go end
 $end
 /end
