@@ -1,0 +1,4 @@
+# add
++ ; could be used instead of \n
++ /else for input handling
++ some kind of reputation system(mayber vars?)
