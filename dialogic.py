@@ -25,21 +25,19 @@ class Dialog:
 					self.running = False
 					return
 				else:
-					print(line)
+					if line != "":
+						print(line)
 			else:
 				jumpLines -= 1
 	def act(self):
 		self.action = input()
-	def run(self):
-		while self.running:
-			self.draw()
-			if not self.running:
-				break
-			self.act()
-			if not self.running:
-				break
+
+def run(dg):
+	while dg.running:
+		dg.draw()
 if __name__ == "__main__":
 	while True:
 		file = input("Enter file:")
 		dg = Dialog(readFile(file))
-		dg.run()
+		print(dg.dialog)
+		run(dg)

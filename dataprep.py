@@ -19,6 +19,7 @@ def cleaN(content):
 	for _ in content:
 		content[_] = content[_].split("\n")
 	return content
+	"""
 def unspace(content):
 	for _ in content:
 		l = content[_]
@@ -27,7 +28,7 @@ def unspace(content):
 				l.pop(i)
 		content[_] = l
 	return content
-
+"""
 def prepare(content):
 	content = parse(content)
 	content = cleaN(content)
