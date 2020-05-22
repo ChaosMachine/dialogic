@@ -10,21 +10,26 @@ class Dialog:
 		self.running = True
 	def draw(self):
 		text = self.dialog[self.pos]
-		noread = 0
+		jumpLines =0
 		for line in text:
+			if jumpLines == 0:
 				if line[0:5] == "/wait": # BROKEN.
 					self.act()
+				elif line[0:4] == "/if ":
+					if line[4:] != self.action:
+						jumpLines += 1
 				elif line[0:4] == "/go ":
-					print(14)
+					#print(14)
 					self.pos=line[4:]
 				elif line[0:4] == "/end":
 					self.running = False
 					return
 				else:
 					print(line)
+			else:
+				jumpLines -= 1
 	def act(self):
-		if self.running:
-			self.action = input()
+		self.action = input()
 	def run(self):
 		while self.running:
 			self.draw()

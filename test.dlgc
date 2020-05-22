@@ -1,6 +1,9 @@
 $init
 Helo da
+1.helo,2.da
 /wait
+/if 1
 /go end
 $end
+win
 /end
