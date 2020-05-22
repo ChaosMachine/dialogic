@@ -6,9 +6,11 @@ Helo da.What do you want?
 /go goodbye
 /if 2
 /go mug
+
 $goodbye
 Have a nice day!
 /end
+
 $mug
 Nope!
 /end
