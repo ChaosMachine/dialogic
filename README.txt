@@ -1,6 +1,6 @@
 # FOR NORMAL USERS:
 If you want to install it,download the client folder.
-Then, run run.exe
+Then, run dialogic.exe
 
 # FOR DEVS:
 This is coding lenguage that is primarly focused on making dialogue trees.
