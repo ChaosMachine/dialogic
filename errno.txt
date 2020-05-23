@@ -1,0 +1,3 @@
+# here is the list of errors:
+1:State do not exist!
+	When you use /go on a state that is not defined

@@ -12,7 +12,9 @@ class Dialog:
 	def draw(self):
 		text = self.dialog[self.pos]
 		jumpLines =0
+		linen = 0
 		for line in text:
+			linen += 1
 			if jumpLines == 0:
 				if line[0:4] == "/ask":
 					if self.blocking:
@@ -24,7 +26,11 @@ class Dialog:
 					if line[4:] != self.action:
 						jumpLines += 1
 				elif line[0:4] == "/go ":
-					self.pos=line[4:]
+					dest = line[4:]
+					if dest in self.dialog:
+						self.pos=dest
+					else:
+						self.error(linen,"1:State do not exist!")
 				elif line[0:4] == "/end":
 					self.running = False
 					return
@@ -33,6 +39,11 @@ class Dialog:
 						print(line)
 			else:
 				jumpLines -= 1
+	def error(self,linen,error):
+		print("Error! in",self.pos,"line",linen)
+		print("Errno:",error)
+		self.running = False
+		return
 	def act(self):
 		self.action = input()
 
