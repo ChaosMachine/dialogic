@@ -53,5 +53,9 @@ def run(dg):
 if __name__ == "__main__":
 	while True:
 		file = input("Enter file:")
-		dg = Dialog(readFile(file))
-		run(dg)
+		try:
+			dg = Dialog(readFile(file))
+			run(dg)
+		except:
+			print("Could not run file!")
+		
