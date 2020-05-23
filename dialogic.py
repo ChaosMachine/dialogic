@@ -14,7 +14,7 @@ class Dialog:
 		jumpLines =0
 		for line in text:
 			if jumpLines == 0:
-				if line[0:5] == "/wait":
+				if line[0:4] == "/ask":
 					if self.blocking:
 						self.act()
 					else:
