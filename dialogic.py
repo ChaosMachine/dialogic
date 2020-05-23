@@ -5,7 +5,6 @@ from threading import Thread
 class Dialog:
 	def __init__(self,dialog,blocking=True):
 		self.dialog = prepare(dialog)
-		print(self.dialog)
 		self.pos = "init"
 		self.action = ""
 		self.running = True
