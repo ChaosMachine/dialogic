@@ -6,7 +6,7 @@ def parse(content):
 	word = ""
 	last = ""
 	for line in content:
-		if line[0] == "$":
+		if line[0] == "@":
 			if last != "":
 				res[last] = word
 				word = ""
