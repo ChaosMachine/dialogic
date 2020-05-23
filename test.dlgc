@@ -8,8 +8,7 @@ Helo da.What do you want?
 /go mug
 
 $goodbye
-Have a nice day!
-/end
+Have a nice day!;/end
 
 $mug
 Nope!

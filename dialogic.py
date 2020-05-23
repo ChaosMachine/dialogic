@@ -3,23 +3,28 @@ from dataprep import prepare,readFile
 from threading import Thread
 
 class Dialog:
-	def __init__(self,dialog):
+	def __init__(self,dialog,blocking=True):
 		self.dialog = prepare(dialog)
+		print(self.dialog)
 		self.pos = "init"
 		self.action = ""
 		self.running = True
+		self.blocking = blocking
 	def draw(self):
 		text = self.dialog[self.pos]
 		jumpLines =0
 		for line in text:
 			if jumpLines == 0:
-				if line[0:5] == "/wait": # BROKEN.
-					self.act()
+				if line[0:5] == "/wait":
+					if self.blocking:
+						self.act()
+					else:
+						while self.action == "":
+							pass
 				elif line[0:4] == "/if ":
 					if line[4:] != self.action:
 						jumpLines += 1
 				elif line[0:4] == "/go ":
-					#print(14)
 					self.pos=line[4:]
 				elif line[0:4] == "/end":
 					self.running = False
@@ -39,5 +44,4 @@ if __name__ == "__main__":
 	while True:
 		file = input("Enter file:")
 		dg = Dialog(readFile(file))
-		print(dg.dialog)
 		run(dg)

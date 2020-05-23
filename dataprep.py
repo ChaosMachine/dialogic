@@ -17,6 +17,14 @@ def parse(content):
 	return res
 def cleaN(content):
 	for _ in content:
+		content[_].replace(";","\n")
+		r = ""
+		for char in content[_]:
+			if char == ";":
+				r += "\n"
+			else:
+				r += char
+		content[_] = r 
 		content[_] = content[_].split("\n")
 	return content
 	"""
