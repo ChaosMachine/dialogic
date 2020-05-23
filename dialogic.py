@@ -2,6 +2,8 @@ import sys,os
 from dataprep import prepare,readFile
 from threading import Thread
 
+url = "https://github.com/GandelXIV/dialogic/tree/master/exe/dialogic.exe"
+
 class Dialog:
 	def __init__(self,dialog,blocking=True):
 		self.dialog = prepare(dialog)
