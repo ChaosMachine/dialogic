@@ -1,4 +1,4 @@
-@init
+#@init
 Helo da.What do you want?
 1.Goodbie,2.Give me your money!
 /ask;/if 1;/go goodbye;/if 2;/go miam

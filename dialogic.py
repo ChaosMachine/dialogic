@@ -5,6 +5,11 @@ from threading import Thread
 class Dialog:
 	def __init__(self,dialog,blocking=True):
 		self.dialog = prepare(dialog)
+		if "init" not in self.dialog:
+			print("[!]Internal error!")
+			print("[!]Errno: 2:no @init state!")
+			self.running = False
+			return
 		self.pos = "init"
 		self.action = ""
 		self.running = True
@@ -40,8 +45,8 @@ class Dialog:
 			else:
 				jumpLines -= 1
 	def error(self,linen,error):
-		print("Error! in",self.pos,"line",linen)
-		print("Errno:",error)
+		print("[!]Error! in",self.pos,"line",linen)
+		print("[!]Errno:",error)
 		self.running = False
 		return
 	def act(self):

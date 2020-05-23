@@ -1,3 +1,11 @@
 # here is the list of errors:
-1:State do not exist!
+# types:
+error: an error that happens when the code is running
+internal error: an error that happens before the code starts
+
+# errors
+error 1:State do not exist!
 	When you use /go on a state that is not defined
+
+int. error 2:no @init state!
+	When you dont define the @init state
