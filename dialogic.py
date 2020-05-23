@@ -5,12 +5,12 @@ from threading import Thread
 class Dialog:
 	def __init__(self,dialog,blocking=True):
 		self.dialog = prepare(dialog)
-		if "init" not in self.dialog:
+		if "root" not in self.dialog:
 			print("[!]Internal error!")
-			print("[!]Errno: 2:no @init state!")
+			print("[!]Errno: 2:no @root state!")
 			self.running = False
 			return
-		self.pos = "init"
+		self.pos = "root"
 		self.action = ""
 		self.running = True
 		self.blocking = blocking
