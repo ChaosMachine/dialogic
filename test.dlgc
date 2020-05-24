@@ -5,6 +5,8 @@ Helo da.What do you want?
 /ask;/if 1;/go goodbye;/if 2;/go mug
 
 @goodbye
+/ask
+/2if 1;helo;da 
 Have a nice day!;/end
 
 @mug

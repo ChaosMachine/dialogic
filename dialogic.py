@@ -32,6 +32,18 @@ class Dialog:
 				elif line[0:4] == "/if ":
 					if line[4:] != self.action:
 						jumpLines += 1
+				elif line[0:5] == "/2if ":
+					if line[5:] != self.action:
+						jumpLines += 2
+				elif line[0:5] == "/3if ":
+					if line[5:] != self.action:
+						jumpLines += 3
+				elif line[0:5] == "/4if ":
+					if line[5:] != self.action:
+						jumpLines += 4
+				elif line[0:5] == "/5if ":
+					if line[5:] != self.action:
+						jumpLines += 5
 				elif line[0:4] == "/go ":
 					dest = line[4:]
 					if dest in self.dialog:
