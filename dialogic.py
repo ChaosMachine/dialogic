@@ -23,34 +23,34 @@ class Dialog:
 		for line in text:
 			linen += 1
 			if jumpLines == 0:
-				if line[0:4] == "/ask":
+				if line[:4] == "/ask":
 					if self.blocking:
 						self.act()
 					else:
 						while self.action == "":
 							pass
-				elif line[0:4] == "/if ":
+				elif line[:4] == "/if ":
 					if line[4:] != self.action:
 						jumpLines += 1
-				elif line[0:5] == "/2if ":
+				elif line[:5] == "/2if ":
 					if line[5:] != self.action:
 						jumpLines += 2
-				elif line[0:5] == "/3if ":
+				elif line[:5] == "/3if ":
 					if line[5:] != self.action:
 						jumpLines += 3
-				elif line[0:5] == "/4if ":
+				elif line[:5] == "/4if ":
 					if line[5:] != self.action:
 						jumpLines += 4
-				elif line[0:5] == "/5if ":
+				elif line[:5] == "/5if ":
 					if line[5:] != self.action:
 						jumpLines += 5
-				elif line[0:4] == "/go ":
+				elif line[:4] == "/go ":
 					dest = line[4:]
 					if dest in self.dialog:
 						self.pos=dest
 					else:
 						self.error(linen,"1:State do not exist!")
-				elif line[0:4] == "/end":
+				elif line[:4] == "/end":
 					self.running = False
 					return
 				else:

@@ -1,11 +1,14 @@
 @root
-Helo da.What do you want?
-1.Goodbie,2.Give me your money!
+Dorby den!
+1.Helo da!
+2.I will kill you
 /ask
-/if 1;/go goodbye;/if 2;/go mug
+/if 1;/go good_day;/if 2;/go nono
 
-@goodbye
-Have a nice day!;/end
+@good_day
+Have a nice day!
+/end
 
-@mug;
-Nope!;/end
+@nono
+I will kill you too!
+/end
