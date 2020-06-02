@@ -63,6 +63,7 @@ class Dialog:
 		print("[!]Errno:",error)
 		self.running = False
 		return
+	
 	def act(self):
 		self.action = input()
 
