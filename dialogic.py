@@ -1,6 +1,6 @@
-import sys,os
+
 from dataprep import prepare,readFile
-from threading import Thread
+
 
 url = "https://github.com/GandelXIV/dialogic/tree/master/exe/dialogic.exe"
 
